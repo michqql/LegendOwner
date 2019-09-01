@@ -14,12 +14,10 @@ import org.bukkit.inventory.meta.ItemMeta;
 import com.michqql.legendowner.utils.CompareItemLore;
 
 public class ItemPickUpEvent implements Listener {
-
-	private CompareItemLore compare;
+	
 	private List<Material> mats = new ArrayList<Material>();
 
-	public ItemPickUpEvent(CompareItemLore compare, List<String> mats) {
-		this.compare = compare;
+	public ItemPickUpEvent(List<String> mats) {
 		for (String line : mats) {
 			Material mat = Material.getMaterial(line);
 			if (mat == null)
@@ -43,9 +41,9 @@ public class ItemPickUpEvent implements Listener {
 		}
 		if (!flag)
 			return;
-
+		
 		ItemMeta im = item.getItemMeta();
-		item.setItemMeta(compare.compare(e.getPlayer(), im));
+		item.setItemMeta(CompareItemLore.compare(e.getPlayer(), im));
 	}
 
 	@EventHandler
@@ -65,7 +63,7 @@ public class ItemPickUpEvent implements Listener {
 			return;
 
 		ItemMeta im = item.getItemMeta();
-		item.setItemMeta(compare.compare(e.getPlayer(), im));
+		item.setItemMeta(CompareItemLore.compare(e.getPlayer(), im));
 	}
 
 }

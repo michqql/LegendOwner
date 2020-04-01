@@ -1,18 +1,18 @@
 # <>--------------------------------------<>
-# <          LegendOwner - v1.2.5          >
+# <          LegendOwner - v1.2.7          >
 # <               by michqql               >
 # <>--------------------------------------<>
 
 prefix: '&d[LegendOwner]'
-use_prefix: true
+use-prefix: true
 
-lore_message: '&7Original Owner: &a%player%'
+reload-message: '&7Reloaded in &f%time%ms&7.'
 
 #
 # <>-----    Materials of legends    -----<>
 #
 # List containing all of the materials that are used for legends
-legend_materials:
+legend-materials:
     - 'RECORD_3'
     - 'RECORD_4'
     - 'RECORD_5'
@@ -25,9 +25,7 @@ legend_materials:
     - 'RECORD_12'
     - 'GOLD_RECORD'
     - 'GREEN_RECORD'
-
-#
-# <>----- Keyword Algorithm Settings -----<>
-#
-# Keyword to search for in items lore (uses this line as a reference)
-keyword: 'UUID'
+    
+world-destroyer:
+    material: 'DIAMOND_PICKAXE'
+    name-without-colour-code: 'World Destroyer'
